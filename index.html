@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="cardCriteria">
+            <h3>What would you like in your new password?</h3>
+            <!-- ask what the user wants in the password -->
+            <!-- lowercase letters, checked by default -->
+            <input type="checkbox" id="lowercase" name="checkboxLowercase" checked>
+            <label for="lowercase">Include lowercase letters</label><br>
+            <!-- capital letters -->
+            <input type="checkbox" id="capital" name="checkboxCapital">
+            <label for="capital">Include capital letters</label><br>
+            <!-- numbers -->
+            <input type="checkbox" id="number" name="checkboxNumbers">
+            <label for="numbers">Include numbers</label><br>
+            <!-- special characters -->
+            <input type="checkbox" id="special" name="checkboxSpecial">
+            <label for="special">Include special characters</label><br>
+            <!-- slider for password length -->
+            <input type="range" min="8" max="128" value="10" class="slider" id="myRange" oninput="passwordLength.value=myRange.value">
+            <label for="passwordLength">Password length:</label>
+            <input id="passwordLength" type="number" value="10" min="8" max="128" oninput="myRange.value=passwordLength.value">
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
